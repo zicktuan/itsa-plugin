@@ -49,17 +49,17 @@
             $params = array(
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_home_fb__sub_title',
+                    'param_name' => 'itsa_fb__sub_title',
                     'heading'    => esc_html__('Sub title', 'bookawesome')
                 ),
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_home_fb__title',
+                    'param_name' => 'itsa_fb__title',
                     'heading'    => esc_html__('Title', 'bookawesome')
                 ),
                 array(
                     'type'       => 'attach_image',
-                    'param_name' => 'itsa_home_fb__bg',
+                    'param_name' => 'itsa_fb__bg',
                     'heading'    => esc_html__('Background', 'bookawesome')
                 ),
                 array(
@@ -86,18 +86,7 @@
                             'type'       => 'textarea',
                             'param_name' => 'comment',
                             'heading'    => esc_html__('Comment', 'bookawesome'),
-                        ),
-                        array(
-                            'type'        => 'dropdown',
-                            'heading'     => __('Number key'),
-                            'param_name'  => 'key',
-                            'admin_label' => true,
-                            'value'       => array(
-                                '0'         => 0,
-                                '1'         => 1,
-                                '2'         => 2,
-                            ),
-                        ),
+                        )
                     )
                 ),
             );
