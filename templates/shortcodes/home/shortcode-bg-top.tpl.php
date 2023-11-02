@@ -1,28 +1,42 @@
-<div class="section techwix-hero-section-05">
-    <div class="techwix-hero-wrap" style="background-image: url(<?php echo !empty($atts['itsa_home_bg__background']) ? wp_get_attachment_url($atts['itsa_home_bg__background']) : '' ?>);">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h3 class="sub-title aos-init aos-animate" data-aos-delay="600" data-aos="fade-up"><?php echo !empty($atts['itsa_home_bg__sub_title']) ? $atts['itsa_home_bg__sub_title'] : ''?></h3>
-                        <!-- <h2 class="title aos-init aos-animate" data-aos="fade-up" data-aos-delay="800">Take the next steps for an <span>AI-driven</span> enterprise.</h2> -->
-                        <h2 class="title aos-init aos-animate" data-aos="fade-up" data-aos-delay="800"><?php echo !empty($atts['itsa_home_bg__title']) ? $atts['itsa_home_bg__title'] : ''?></h2>
-                        <p data-aos="fade-up" data-aos-delay="900" class="aos-init aos-animate"><?php echo !empty($atts['itsa_home_bg__short_desc']) ? $atts['itsa_home_bg__short_desc'] : ''?></p>
-                        <?php if(!empty($atts['itsa_home_bg__url'])): ?>
-                        <div class="hero-btn aos-init aos-animate" data-aos="fade-up" data-aos-delay="1000">
-                            <a class="btn" href="<?php echo $atts['itsa_home_bg__url'] ?>">Read More</a>
+<section class="py-0 mx-lg-1-6 mx-xl-2-5 mx-xxl-2-9">
+    <div class="slider-fade1 owl-carousel owl-theme w-100 owl-loaded">
+        <div class="owl-stage-outer">
+            <div class="owl-stage" style="transform: translate3d(-3620px, 0px, 0px); transition: all 0s ease 0s; width: 12672px;">
+                <?php if(!empty($listItems[0])): ?>
+                <?php foreach ($listItems as $item):?>
+                <div class="owl-item cloned" style="width: 1810.22px;">
+                    <div class="item bg-img cover-background pt-14 pb-22 py-sm-18 py-lg-20 py-xl-24"
+                        data-background="<?php echo !empty($item['bg']) ? wp_get_attachment_url($item['bg']) : '' ?>"
+                        style="background-image: url(<?php echo !empty($item['bg']) ? wp_get_attachment_url($item['bg']) : '' ?>);">
+                        <div class="container position-relative z-index-9">
+                            <div class="row align-items-center justify-content-xl-end">
+                                <div class="col-lg-9 col-xl-7 col-xxl-6">
+                                    <h1 class="display-16 display-sm-7 display-lg-4 display-xl-3 mb-2-9">
+                                        <?php echo !empty($item['title']) ? $item['title'] : ''?>
+                                    </h1>
+                                    <p class="mb-2-3 font-weight-500 lead d-none d-sm-block">
+                                        <?php echo !empty($item['desc']) ? $item['desc'] : ''?>
+                                    </p>
+                                    <?php if(!empty($item['url'])): ?>
+                                    <a href="<?php echo $item['url'] ?>" class="btn-style1">
+                                        <span>Get Started</span>
+                                    </a>
+                                    <?php endif ?>
+                                </div>
+                            </div>
                         </div>
-                        <?php endif ?>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-images">
-                        <div class="images">
-                            <img src="<?php echo !empty($atts['itsa_home_bg__img']) ? wp_get_attachment_url($atts['itsa_home_bg__img']) : '' ?>" alt="">
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; endif; ?>
+
             </div>
         </div>
     </div>
-</div>
+    <div class="line-animated">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</section>

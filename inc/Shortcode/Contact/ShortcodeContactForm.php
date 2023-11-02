@@ -48,46 +48,43 @@
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_contact_form__sub_title',
-                    'heading'    => esc_html__('Sub title', 'bookawesome')
+                    'heading'    => esc_html__('Sub title', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_contact_form__title',
-                    'heading'    => esc_html__('Title', 'bookawesome')
+                    'heading'    => esc_html__('Title', 'itsa')
+                ),
+                array(
+                    'type'       => 'textarea',
+                    'param_name' => 'itsa_contact_form__desc',
+                    'heading'    => esc_html__('Description', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_contact_form__email',
-                    'heading'    => esc_html__('Email', 'bookawesome'),
-                    'std'        => 'Email',
-                    'desc'       => 'Text ô input khi đang trống'
+                    'param_name' => 'itsa_contact_form__fb',
+                    'heading'    => esc_html__('Facebooke', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_contact_form__name',
-                    'heading'    => esc_html__('Name', 'bookawesome'),
-                    'std'        => 'Tên khách hàng',
-                    'desc'       => 'Text ô input khi đang trống'
+                    'param_name' => 'itsa_contact_form__twitter',
+                    'heading'    => esc_html__('Twitter', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_contact_form__content',
-                    'heading'    => esc_html__('Content', 'bookawesome'),
-                    'std'        => 'Ý kiến khách hàng',
-                    'desc'       => 'Text ô input khi đang trống'
+                    'param_name' => 'itsa_contact_form__ig',
+                    'heading'    => esc_html__('Instagram', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_contact_form__submit',
-                    'heading'    => esc_html__('Button name', 'bookawesome'),
-                    'std'        => 'Gửi tin nhắn của bạn',
-                    'desc'       => 'Text ô input khi đang trống'
+                    'param_name' => 'itsa_contact_form__in',
+                    'heading'    => esc_html__('Linkin', 'itsa')
                 ),
             );
 
             return array(
-                'name'        => esc_html__('Form Contact', 'bookawesome'),
-                'description' => esc_html__('Contact', 'bookawesome'),
+                'name'        => esc_html__('Form Contact', 'itsa'),
+                'description' => esc_html__('Contact', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

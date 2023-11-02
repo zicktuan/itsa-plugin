@@ -18,7 +18,7 @@ class General extends SettingFactory
 	public function section(){
 		return array(
 	        'id'          => 'general_setting',
-			'title' => __(' General Settings', 'bookawesome'),
+			'title' => __(' General Settings', 'itsa'),
             'icon'  => '<div class="dashicons dashicons-admin-generic"></div>'
 	    );
 	}
@@ -34,21 +34,35 @@ class General extends SettingFactory
 	public function general() {
         $settings = [
             [
-                'label'       => __( 'General', 'bookawesome' ),
+                'label'       => __( 'General', 'ista' ),
                 'id'          => 'general',
                 'type'        => 'tab',
                 'section'     => 'general_setting',
             ],
             [
                 'id'          => 'awe_phone_online',
-                'label'       => __( 'Số điện thoại online', 'bookawesome' ),
+                'label'       => __( 'Số điện thoại', 'ista' ),
+                'type'        => 'text',
+                'section'     => 'general_setting',
+                'desc'        => ' '
+            ],
+            [
+                'id'          => 'awe_mail_company',
+                'label'       => __( 'Mail Công ty', 'ista' ),
+                'type'        => 'text',
+                'section'     => 'general_setting',
+                'desc'        => ' '
+            ],
+            [
+                'id'          => 'awe_phone_address',
+                'label'       => __( 'Địa chỉ', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'desc'        => ' '
             ],
             [
                 'id'          => 'awe_social_fb',
-                'label'       => __( 'Đường dẫn trang facebook', 'bookawesome' ),
+                'label'       => __( 'Đường dẫn trang facebook', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'std'         => '',
@@ -56,7 +70,7 @@ class General extends SettingFactory
             ],
             [
                 'id'          => 'awe_social_ins',
-                'label'       => __( 'Đường dẫn instagram', 'bookawesome' ),
+                'label'       => __( 'Đường dẫn instagram', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'std'         => '',
@@ -64,7 +78,7 @@ class General extends SettingFactory
             ],
             [
                 'id'          => 'awe_social_twitter',
-                'label'       => __( 'Đường dẫn twitter', 'bookawesome' ),
+                'label'       => __( 'Đường dẫn twitter', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'std'         => '',
@@ -72,7 +86,7 @@ class General extends SettingFactory
             ],
             [
                 'id'          => 'awe_social_linkedin',
-                'label'       => __( 'Đường dẫn linkedin', 'bookawesome' ),
+                'label'       => __( 'Đường dẫn linkedin', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'std'         => '',
@@ -80,7 +94,7 @@ class General extends SettingFactory
             ],
             [
                 'id'          => 'awe_social_you',
-                'label'       => __( 'Đường dẫn youtube', 'bookawesome' ),
+                'label'       => __( 'Đường dẫn youtube', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'std'         => '',
@@ -94,28 +108,28 @@ class General extends SettingFactory
     public function listMail() {
         $settings = [
             [
-                'label'       => __( 'List Mail', 'bookawesome' ),
+                'label'       => __( 'List Mail', 'itsa' ),
                 'id'          => 'list_mail',
                 'type'        => 'tab',
                 'section'     => 'general_setting',
             ],
             [
                 'id'          => 'awe_email_to',
-                'label'       => __( 'Email to (*)', 'bookawesome' ),
+                'label'       => __( 'Email to (*)', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'desc'        => ' '
             ],
             [
                 'id'          => 'awe_email_cc_to',
-                'label'       => __( 'CC to', 'bookawesome' ),
+                'label'       => __( 'CC to', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'desc'        => ' '
             ],
             [
                 'id'          => 'awe_email_bcc_to',
-                'label'       => __( 'BCC to', 'bookawesome' ),
+                'label'       => __( 'BCC to', 'itsa' ),
                 'type'        => 'text',
                 'section'     => 'general_setting',
                 'desc'        => ' '
@@ -128,14 +142,14 @@ class General extends SettingFactory
 	public function header() {
         $settings = [
             [
-                'label'       => __( 'Header', 'bookawesome' ),
+                'label'       => __( 'Header', 'itsa' ),
                 'id'          => 'header',
                 'type'        => 'tab',
                 'section'     => 'general_setting',
             ],
             [
                 'id'      => 'awe_header_logo',
-                'label'   => __( 'Logo', 'bookawesome' ),
+                'label'   => __( 'Logo', 'itsa' ),
                 'type'    => 'upload',
                 'section' => 'general_setting',
             ]
@@ -146,26 +160,20 @@ class General extends SettingFactory
     public function footer() {
         $settings = [
             [
-                'label'       => __( 'Footer', 'bookawesome' ),
+                'label'       => __( 'Footer', 'itsa' ),
                 'id'          => 'footer',
                 'type'        => 'tab',
                 'section'     => 'general_setting',
             ],
             [
                 'id'      => 'awe_footer_logo',
-                'label'   => __( 'Logo', 'bookawesome' ),
+                'label'   => __( 'Logo', 'itsa' ),
                 'type'    => 'upload',
                 'section' => 'general_setting',
             ],
             [
-                'id'      => 'awe_footer_slogan',
-                'label'   => __( 'Slogan', 'bookawesome' ),
-                'type'    => 'text',
-                'section' => 'general_setting',
-            ],
-            [
                 'id'      => 'awe_footer_copyright',
-                'label'   => __('Footer copyright', 'bookawesome'),
+                'label'   => __('Footer copyright', 'itsa'),
                 'type'    => 'text',
                 'section' => 'general_setting',
             ],

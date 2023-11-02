@@ -1,7 +1,5 @@
 <?php
-    namespace MyPlugin\Shortcode\Team;
-
-    use MyPlugin\Shortcode\AbstractShortcode;
+    namespace MyPlugin\Shortcode;
 
     class ShortcodeTeam extends AbstractShortcode
     {
@@ -34,7 +32,7 @@
             $listItems = vc_param_group_parse_atts( $atts['items'] );
 
             ob_start();
-            include $this->parent->locateTemplate('team/shortcode-team.tpl.php');
+            include $this->parent->locateTemplate('shortcode-teams.tpl.php');
             return ob_get_clean();
         }
 
@@ -46,64 +44,65 @@
          * @see vc_lean_map()
          */
         public function map() {
+
             $params = array(
+                array(
+                    'type'       => 'textfield',
+                    'param_name' => 'itsa_team__sub_title',
+                    'heading'    => esc_html__('Sub Title', 'itsa')
+                ),
+                array(
+                    'type'       => 'textfield',
+                    'param_name' => 'itsa_team__title',
+                    'heading'    => esc_html__('Title', 'itsa')
+                ),
                 array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'List item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List item', 'itsa' ),
                     'params'     => array(
                         array(
                             'type'       => 'attach_image',
-                            'param_name' => 'bg',
-                            'heading'    => esc_html__('Background', 'bookawesome')
+                            'param_name' => 'img',
+                            'heading'    => esc_html__('Image', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'url',
-                            'heading'    => esc_html__('Url', 'bookawesome')
+                            'heading'    => esc_html__('Url', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'name',
-                            'heading'    => esc_html__('Name', 'bookawesome')
+                            'heading'    => esc_html__('Name', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'position',
-                            'heading'    => esc_html__('Position', 'bookawesome')
+                            'heading'    => esc_html__('Position', 'itsa')
                         ),
                         array(
-                            'type'       => 'param_group',
-                            'param_name' => 'socials',
-                            'heading'    => esc_html__('List social', 'bookawesome'),
-                            'params'     => array(
-                                array(
-                                    'type'       => 'textfield',
-                                    'param_name' => 'url',
-                                    'heading'    => esc_html__('Url', 'bookawesome')
-                                ),
-                                array(
-                                    'type'        => 'dropdown',
-                                    'heading'     => __('Icon'),
-                                    'param_name'  => 'icon',
-                                    'admin_label' => true,
-                                    'value'       => array(
-                                        'facebook' => '<i class="fab fa-facebook-f"></i>',
-                                        'twitter' =>  '<i class="fab fa-twitter"></i>',
-                                        'dribbble' => '<i class="fab fa-dribbble"></i>',
-                                        'behance' => '<i class="fab fa-behance"></i>',
-                                    ),
-                                ),
-                            )
+                            'type'       => 'textfield',
+                            'param_name' => 'fb',
+                            'heading'    => esc_html__('Facebook', 'itsa')
                         ),
-                        
+                        array(
+                            'type'       => 'textfield',
+                            'param_name' => 'tw',
+                            'heading'    => esc_html__('Twitter', 'itsa')
+                        ),
+                        array(
+                            'type'       => 'textfield',
+                            'param_name' => 'in',
+                            'heading'    => esc_html__('Linkedin', 'itsa')
+                        )
                     )
                 )
             );
 
             return array(
-                'name'        => esc_html__('Team', 'bookawesome'),
-                'description' => esc_html__('Team', 'bookawesome'),
+                'name'        => esc_html__('Teams', 'itsa'),
+                'description' => esc_html__('Teams', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

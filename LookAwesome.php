@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Solution Architect
+Plugin Name: ITSA - IT Solutions & Services
 Plugin URI: https://lookawesome.net/
 Description: Plugin support for theme lookAwesome.
 Version: 1.0
 Author: Nguyen Anh Tuan
 Author URI: https://lookawesome.net/
 License: GPLv2 or later
-Text Domain: bookawesome
+Text Domain: itsa
 */
 
 if ( ! defined( 'ABSPATH' ) ) {

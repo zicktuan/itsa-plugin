@@ -1,9 +1,9 @@
 <?php
-    namespace MyPlugin\Shortcode\Service;
+    namespace MyPlugin\Shortcode\About;
 
     use MyPlugin\Shortcode\AbstractShortcode;
 
-    class ShortcodeFeedBack extends AbstractShortcode
+    class ShortcodeProcess extends AbstractShortcode
     {
         public function __construct($self = null) {
             $this->parent = $self;
@@ -17,7 +17,7 @@
          * @return string
          */
         public function get_name() {
-            return 'itsa_feedback_service';
+            return 'itsa_about_process';
         }
 
         /**
@@ -31,10 +31,8 @@
             $atts = vc_map_get_attributes($this->get_name(), $atts);
             $atts = array_map('trim', $atts);
 
-            $listItems = vc_param_group_parse_atts( $atts['items'] );
-
             ob_start();
-            include $this->parent->locateTemplate('service/shortcode-feedback.tpl.php');
+            include $this->parent->locateTemplate('about/shortcode-process.tpl.php');
             return ob_get_clean();
         }
 
@@ -49,51 +47,41 @@
             $params = array(
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_fb__sub_title',
-                    'heading'    => esc_html__('Sub title', 'bookawesome')
+                    'param_name' => 'itsa_about_process__sub_title',
+                    'heading'    => esc_html__('Sub title', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_fb__title',
-                    'heading'    => esc_html__('Title', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'attach_image',
-                    'param_name' => 'itsa_fb__bg',
-                    'heading'    => esc_html__('Background', 'bookawesome')
+                    'param_name' => 'itsa_about_process__title',
+                    'heading'    => esc_html__('Title', 'itsa')
                 ),
                 array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'List Item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List item', 'itsa' ),
                     'params'     => array(
                         array(
                             'type'       => 'attach_image',
                             'param_name' => 'img',
-                            'heading'    => esc_html__('Image', 'bookawesome')
+                            'heading'    => esc_html__('Image', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
-                            'param_name' => 'name',
-                            'heading'    => esc_html__('Name', 'bookawesome')
+                            'param_name' => 'title',
+                            'heading'    => esc_html__('Title', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
-                            'param_name' => 'position',
-                            'heading'    => esc_html__('Position', 'bookawesome')
-                        ),
-                        array(
-                            'type'       => 'textarea',
-                            'param_name' => 'comment',
-                            'heading'    => esc_html__('Comment', 'bookawesome'),
+                            'param_name' => 'desc',
+                            'heading'    => esc_html__('Description', 'itsa')
                         )
                     )
-                ),
+                )
             );
 
             return array(
-                'name'        => esc_html__('Feedback Service', 'bookawesome'),
-                'description' => esc_html__('Service', 'bookawesome'),
+                'name'        => esc_html__('Process', 'itsa'), 
+                'description' => esc_html__('About', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

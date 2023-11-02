@@ -48,18 +48,18 @@
                 array(
                     'type'       => 'attach_image',
                     'param_name' => 'itsa_contact_bg__background',
-                    'heading'    => esc_html__('Background', 'bookawesome')
+                    'heading'    => esc_html__('Background', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_contact_bg__title',
-                    'heading'    => esc_html__('Title page', 'bookawesome')
+                    'heading'    => esc_html__('Title page', 'itsa')
                 )
             );
 
             return array(
-                'name'        => esc_html__('Background Contact General', 'bookawesome'),
-                'description' => esc_html__('Contact', 'bookawesome'),
+                'name'        => esc_html__('Background Top General', 'itsa'),
+                'description' => esc_html__('General', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

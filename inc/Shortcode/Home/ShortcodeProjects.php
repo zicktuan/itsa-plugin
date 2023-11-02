@@ -1,9 +1,9 @@
 <?php
-    namespace MyPlugin\Shortcode\About;
+    namespace MyPlugin\Shortcode\Home;
 
     use MyPlugin\Shortcode\AbstractShortcode;
 
-    class ShortcodeSolutions extends AbstractShortcode
+    class ShortcodeProjects extends AbstractShortcode
     {
         public function __construct($self = null) {
             $this->parent = $self;
@@ -17,7 +17,7 @@
          * @return string
          */
         public function get_name() {
-            return 'itsa_solution_about';
+            return 'itsa_home_projects';
         }
 
         /**
@@ -34,7 +34,7 @@
             $listItems = vc_param_group_parse_atts( $atts['items'] );
 
             ob_start();
-            include $this->parent->locateTemplate('about/shortcode-solutions.tpl.php');
+            include $this->parent->locateTemplate('home/shortcode-projects.tpl.php');
             return ob_get_clean();
         }
 
@@ -48,53 +48,37 @@
         public function map() {
             $params = array(
                 array(
-                    'type'       => 'attach_image',
-                    'param_name' => 'itsa_about_solution__bg',
-                    'heading'    => esc_html__('Background', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'textfield',
-                    'param_name' => 'itsa_about_solution__sub_title',
-                    'heading'    => esc_html__('Sub title', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'textfield',
-                    'param_name' => 'itsa_about_solution__title',
-                    'heading'    => esc_html__(' title', 'bookawesome')
-                ),
-                array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'List item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List Item', 'itsa' ),
                     'params'     => array(
                         array(
                             'type'       => 'attach_image',
-                            'param_name' => 'icon',
-                            'heading'    => esc_html__('Icon', 'bookawesome')
+                            'param_name' => 'image',
+                            'heading'    => esc_html__('Image', 'itsa')
+                        ),
+                        array(
+                            'type'       => 'textfield',
+                            'param_name' => 'position',
+                            'heading'    => esc_html__('Position', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'title',
-                            'heading'    => esc_html__('Title', 'bookawesome')
+                            'heading'    => esc_html__('Title', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'url',
-                            'heading'    => esc_html__('Url', 'bookawesome')
-                        ),
-                        array(
-                            'type'       => 'textarea',
-                            'param_name' => 'desc',
-                            'heading'    => esc_html__('Desc', 'bookawesome')
-                        ),
-                        
+                            'heading'    => esc_html__('Url read more', 'itsa')
+                        )
                     )
                 )
             );
 
             return array(
-                'name'        => esc_html__('Solution About', 'bookawesome'),
-                'description' => esc_html__('About', 'bookawesome'),
+                'name'        => esc_html__('Projects', 'itsa'),
+                'description' => esc_html__('Home', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

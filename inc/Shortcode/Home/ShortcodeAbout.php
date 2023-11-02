@@ -17,7 +17,7 @@
          * @return string
          */
         public function get_name() {
-            return 'itsa_about_home';
+            return 'itsa_home_about';
         }
 
         /**
@@ -50,61 +50,55 @@
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_home_about__sub_title',
-                    'heading'    => esc_html__('Sub title', 'bookawesome')
+                    'heading'    => esc_html__('Sub title', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_home_about__title',
-                    'heading'    => esc_html__('Title', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'attach_image',
-                    'param_name' => 'itsa_home_about__img_big',
-                    'heading'    => esc_html__('Image big', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'attach_image',
-                    'param_name' => 'itsa_home_about__img_sm',
-                    'heading'    => esc_html__('Image small', 'bookawesome')
+                    'heading'    => esc_html__('Title', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_home_about__title_content',
-                    'heading'    => esc_html__('Title content', 'bookawesome')
+                    'heading'    => esc_html__('Title content', 'itsa')
                 ),
-                array(
-                    'type'       => 'textfield',
-                    'param_name' => 'itsa_home_about__text_content',
-                    'heading'    => esc_html__('Text content', 'bookawesome')
-                ),
-
                 array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'List Item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List Item', 'itsa' ),
                     'params'     => array(
-                        array(
-                            'type'       => 'attach_image',
-                            'param_name' => 'img',
-                            'heading'    => esc_html__('Image', 'bookawesome')
-                        ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'title',
-                            'heading'    => esc_html__('Title', 'bookawesome')
-                        ),
-                        array(
-                            'type'       => 'textfield',
-                            'param_name' => 'desc',
-                            'heading'    => esc_html__('Desc', 'bookawesome'),
-                        ),
+                            'heading'    => esc_html__('Title', 'itsa')
+                        )
                     )
+                ),
+                array(
+                    'type'       => 'attach_image',
+                    'param_name' => 'itsa_home_about__img1',
+                    'heading'    => esc_html__('Image 1', 'itsa')
+                ),
+                array(
+                    'type'       => 'attach_image',
+                    'param_name' => 'itsa_home_about__img2',
+                    'heading'    => esc_html__('Image 2', 'itsa')
+                ),
+                array(
+                    'type'       => 'attach_image',
+                    'param_name' => 'itsa_home_about__img3',
+                    'heading'    => esc_html__('Image 3', 'c')
+                ),
+                array(
+                    'type'       => 'textfield',
+                    'param_name' => 'itsa_home_about__url',
+                    'heading'    => esc_html__('Url read more', 'itsa')
                 ),
             );
 
             return array(
-                'name'        => esc_html__('About Home', 'bookawesome'),
-                'description' => esc_html__('Home', 'bookawesome'),
+                'name'        => esc_html__('About', 'itsa'),
+                'description' => esc_html__('Home', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

@@ -17,7 +17,7 @@
          * @return string
          */
         public function get_name() {
-            return 'itsa_service_home';
+            return 'itsa_home_service';
         }
 
         /**
@@ -50,46 +50,45 @@
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_home_service__sub_title',
-                    'heading'    => esc_html__('Sub title', 'bookawesome')
+                    'heading'    => esc_html__('Sub title', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_home_service__title',
-                    'heading'    => esc_html__('Title', 'bookawesome')
+                    'heading'    => esc_html__('Title', 'itsa')
                 ),
                 array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'List item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List item', 'itsa' ),
                     'params'     => array(
                         array(
                             'type'       => 'attach_image',
-                            'param_name' => 'img',
-                            'heading'    => esc_html__('Image', 'bookawesome')
+                            'param_name' => 'icon',
+                            'heading'    => esc_html__('Icon', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'title',
-                            'heading'    => esc_html__('title', 'bookawesome')
+                            'heading'    => esc_html__('Title', 'itsa')
+                        ),
+                        array(
+                            'type'       => 'textarea',
+                            'param_name' => 'desc',
+                            'heading'    => esc_html__('Desc', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'url',
-                            'heading'    => esc_html__('Url', 'bookawesome')
+                            'heading'    => esc_html__('Url', 'itsa')
                         ),
-                        
-                        array(
-                            'type'       => 'textarea',
-                            'param_name' => 'desc',
-                            'heading'    => esc_html__('Desc', 'bookawesome')
-                        )
                     )
                 )
             );
 
             return array(
-                'name'        => esc_html__('Service Home', 'bookawesome'),
-                'description' => esc_html__('Home', 'bookawesome'),
+                'name'        => esc_html__('Service', 'itsa'),
+                'description' => esc_html__('Home', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

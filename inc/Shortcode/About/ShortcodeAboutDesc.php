@@ -49,56 +49,52 @@
             $params = array(
                 array(
                     'type'       => 'attach_image',
-                    'param_name' => 'itsa_about_desc__background',
-                    'heading'    => esc_html__('Background', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'attach_image',
                     'param_name' => 'itsa_about_desc__img1',
-                    'heading'    => esc_html__('Image 1', 'bookawesome')
+                    'heading'    => esc_html__('Image 1', 'itsa')
                 ),
                 array(
                     'type'       => 'attach_image',
                     'param_name' => 'itsa_about_desc__img2',
-                    'heading'    => esc_html__('Image 2', 'bookawesome')
+                    'heading'    => esc_html__('Image 2', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_about_desc__sub_title',
-                    'heading'    => esc_html__('Sub title', 'bookawesome')
+                    'heading'    => esc_html__('Sub title', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
                     'param_name' => 'itsa_about_desc__title',
-                    'heading'    => esc_html__('Title', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'textarea',
-                    'param_name' => 'itsa_about_desc__desc',
-                    'heading'    => esc_html__('Description', 'bookawesome')
+                    'heading'    => esc_html__('Title', 'itsa')
                 ),
                 array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'List Item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List Item', 'itsa' ),
                     'params'     => array(
                         array(
                             'type'       => 'textfield',
-                            'param_name' => 'title',
-                            'heading'    => esc_html__('Title', 'bookawesome')
+                            'param_name' => 'icon',
+                            'heading'    => esc_html__('Icon', 'itsa'),
+                            'std'        => '<i class="fa-brands fa-gitter"></i>'
                         ),
                         array(
                             'type'       => 'textfield',
+                            'param_name' => 'title',
+                            'heading'    => esc_html__('Title', 'itsa')
+                        ),
+                        array(
+                            'type'       => 'textarea',
                             'param_name' => 'desc',
-                            'heading'    => esc_html__('Desc', 'bookawesome'),
+                            'heading'    => esc_html__('Desc', 'itsa'),
                         ),
                     )
                 ),
             );
 
             return array(
-                'name'        => esc_html__('Detail About', 'bookawesome'),
-                'description' => esc_html__('About', 'bookawesome'),
+                'name'        => esc_html__('About Us', 'itsa'),
+                'description' => esc_html__('About', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

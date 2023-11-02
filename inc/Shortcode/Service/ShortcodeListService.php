@@ -3,7 +3,7 @@
 
     use MyPlugin\Shortcode\AbstractShortcode;
 
-    class ShortcodeListReason extends AbstractShortcode
+    class ShortcodeListService extends AbstractShortcode
     {
         public function __construct($self = null) {
             $this->parent = $self;
@@ -17,7 +17,7 @@
          * @return string
          */
         public function get_name() {
-            return 'itsa_reason_service';
+            return 'itsa_service';
         }
 
         /**
@@ -34,7 +34,7 @@
             $listItems = vc_param_group_parse_atts( $atts['items'] );
 
             ob_start();
-            include $this->parent->locateTemplate('service/shortcode-list-reason.tpl.php');
+            include $this->parent->locateTemplate('service/shortcode-list-service.tpl.php');
             return ob_get_clean();
         }
 
@@ -48,38 +48,47 @@
         public function map() {
             $params = array(
                 array(
+                    'type'       => 'textfield',
+                    'param_name' => 'itsa_service__title',
+                    'heading'    => esc_html__('Title', 'itsa')
+                ),
+                array(
+                    'type'       => 'textfield',
+                    'param_name' => 'itsa_service__sub_title',
+                    'heading'    => esc_html__('Sub Title', 'itsa')
+                ),
+                array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'List item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List item', 'itsa' ),
                     'params'     => array(
                         array(
                             'type'       => 'attach_image',
                             'param_name' => 'icon',
-                            'heading'    => esc_html__('Icon', 'bookawesome')
+                            'heading'    => esc_html__('Icon', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'title',
-                            'heading'    => esc_html__('Title', 'bookawesome')
-                        ),
-                        array(
-                            'type'       => 'textfield',
-                            'param_name' => 'url',
-                            'heading'    => esc_html__('Url', 'bookawesome')
+                            'heading'    => esc_html__('Title', 'itsa')
                         ),
                         array(
                             'type'       => 'textarea',
                             'param_name' => 'desc',
-                            'heading'    => esc_html__('Desc', 'bookawesome')
+                            'heading'    => esc_html__('Desc', 'itsa')
                         ),
-                        
+                        array(
+                            'type'       => 'textfield',
+                            'param_name' => 'url',
+                            'heading'    => esc_html__('Url', 'itsa')
+                        ),
                     )
                 )
             );
 
             return array(
-                'name'        => esc_html__('Reason choose Service', 'bookawesome'),
-                'description' => esc_html__('Service', 'bookawesome'),
+                'name'        => esc_html__('Services', 'itsa'),
+                'description' => esc_html__('Service', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

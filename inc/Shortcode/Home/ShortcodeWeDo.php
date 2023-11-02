@@ -1,9 +1,9 @@
 <?php
-    namespace MyPlugin\Shortcode\Choose;
+    namespace MyPlugin\Shortcode\Home;
 
     use MyPlugin\Shortcode\AbstractShortcode;
 
-    class ShortcodePreminentSolution extends AbstractShortcode
+    class ShortcodeWeDo extends AbstractShortcode
     {
         public function __construct($self = null) {
             $this->parent = $self;
@@ -17,7 +17,7 @@
          * @return string
          */
         public function get_name() {
-            return 'itsa_preminent_solution_choose';
+            return 'itsa_home_we_do';
         }
 
         /**
@@ -34,7 +34,7 @@
             $listItems = vc_param_group_parse_atts( $atts['items'] );
 
             ob_start();
-            include $this->parent->locateTemplate('choose/shortcode-preminent-solution.tpl.php');
+            include $this->parent->locateTemplate('home/shortcode-we-do.tpl.php');
             return ob_get_clean();
         }
 
@@ -48,57 +48,52 @@
         public function map() {
             $params = array(
                 array(
-                    'type'       => 'attach_image',
-                    'param_name' => 'itsa_choose_preminent_solution__bg',
-                    'heading'    => esc_html__('Background', 'bookawesome')
+                    'type'       => 'textfield',
+                    'param_name' => 'itsa_home_we_do__sub_title',
+                    'heading'    => esc_html__('Sub title', 'itsa')
                 ),
                 array(
                     'type'       => 'textfield',
-                    'param_name' => 'itsa_choose_preminent_solution__title',
-                    'heading'    => esc_html__('Title', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'textfield',
-                    'param_name' => 'itsa_choose_preminent_solution__exp',
-                    'heading'    => esc_html__('Number exp', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'textfield',
-                    'param_name' => 'itsa_choose_preminent_solution__url',
-                    'heading'    => esc_html__('Url', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'textfield',
-                    'param_name' => 'itsa_choose_preminent_solution__text_btn',
-                    'heading'    => esc_html__('Text button', 'bookawesome')
-                ),
-                array(
-                    'type'       => 'textarea',
-                    'param_name' => 'itsa_choose_preminent_solution__desc',
-                    'heading'    => esc_html__('desc', 'bookawesome')
+                    'param_name' => 'itsa_home_we_do__title',
+                    'heading'    => esc_html__('Title', 'itsa')
                 ),
                 array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__( 'Skill item', 'bookawesome' ),
+                    'heading'    => esc_html__( 'List Item', 'itsa' ),
                     'params'     => array(
                         array(
-                            'type'       => 'textfield',
-                            'param_name' => 'title',
-                            'heading'    => esc_html__('Title', 'bookawesome')
+                            'type'       => 'attach_image',
+                            'param_name' => 'img',
+                            'heading'    => esc_html__('Image', 'itsa')
+                        ),
+                        array(
+                            'type'       => 'attach_image',
+                            'param_name' => 'icon',
+                            'heading'    => esc_html__('Icon', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
-                            'param_name' => 'percent',
-                            'heading'    => esc_html__('Percent', 'bookawesome')
+                            'param_name' => 'title',
+                            'heading'    => esc_html__('Title', 'itsa')
+                        ),
+                        array(
+                            'type'       => 'textfield',
+                            'param_name' => 'desc',
+                            'heading'    => esc_html__('Desc', 'itsa'),
+                        ),
+                        array(
+                            'type'       => 'textfield',
+                            'param_name' => 'url',
+                            'heading'    => esc_html__('Url', 'itsa'),
                         ),
                     )
                 ),
             );
 
             return array(
-                'name'        => esc_html__('Preminent solution choose', 'bookawesome'),
-                'description' => esc_html__('Choose Us', 'bookawesome'),
+                'name'        => esc_html__('We Do', 'itsa'),
+                'description' => esc_html__('Home', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

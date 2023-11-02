@@ -50,35 +50,35 @@
                 array(
                     'type'       => 'param_group',
                     'param_name' => 'items',
-                    'heading'    => esc_html__('Items', 'bookawesome'),
+                    'heading'    => esc_html__('Items', 'itsa'),
                     'params'     => array(
                         array(
-                            'type'       => 'attach_images',
+                            'type'       => 'textfield',
                             'param_name' => 'icon',
-                            'heading'    => esc_html__('Icon', 'bookawesome')
+                            'heading'    => esc_html__('Icon', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'title',
-                            'heading'    => esc_html__('Title', 'bookawesome')
+                            'heading'    => esc_html__('Title', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'info',
-                            'heading'    => esc_html__('Thông tin 1', 'bookawesome')
+                            'heading'    => esc_html__('Information 1', 'itsa')
                         ),
                         array(
                             'type'       => 'textfield',
                             'param_name' => 'info1',
-                            'heading'    => esc_html__('Thông tin 2', 'bookawesome')
+                            'heading'    => esc_html__('Information 2', 'itsa')
                         )
                     )
                 )
             );
 
             return array(
-                'name'        => esc_html__('Contact General', 'bookawesome'),
-                'description' => esc_html__('Contact', 'bookawesome'),
+                'name'        => esc_html__('Contact General', 'itsa'),
+                'description' => esc_html__('Contact', 'itsa'),
                 'category'    => $this->get_category(),
                 'icon'        => $this->get_icon(),
                 'params'      => $params

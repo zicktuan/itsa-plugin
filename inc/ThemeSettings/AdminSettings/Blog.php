@@ -19,7 +19,7 @@ class Blog extends SettingFactory
     {
         return array(
             'id'          => 'blog_setting',
-            'title' => __(' Blog', 'bookawesome'),
+            'title' => __(' Blog', 'itsa'),
             'icon'  => '<span class="dashicons dashicons-book-alt"></span>'
         );
     }
@@ -35,46 +35,20 @@ class Blog extends SettingFactory
     public function Blog() {
         $setting = [
             [
-                'label'       => __( 'General', 'bookawesome' ),
+                'label'       => __( 'General', 'itsa' ),
                 'id'          => 'general',
                 'type'        => 'tab',
                 'section'     => 'blog_setting',
             ],
             [
-                'id'          => 'awe_config_show_blog',
-                'label'       => __( 'Chế Độ Hiển Thị', 'bookawesome' ),
-                'type'        => 'select',
-                'section'     => 'blog_setting',
-                'choices'	  => [
-                    ['value' => '0', 'label' => __( 'No Sidebar', 'bookawesome' )],
-                    ['value' => '1', 'label' => __( 'Sidebar', 'bookawesome' )],
-                ]
-            ],
-            [
-                'id'          => 'awe_config_style_blog',
-                'label'       => __( 'Style Hiển Thị', 'bookawesome' ),
-                'type'        => 'select',
-                'section'     => 'blog_setting',
-                'choices'	  => [
-                    ['value' => '0', 'label' => __( 'List', 'bookawesome' )],
-                    ['value' => '1', 'label' => __( 'Grid', 'bookawesome' )],
-                ]
-            ],
-            [
                 'id'      => 'blog_bg',
-                'label'   => __('Background', 'bookawesome'),
+                'label'   => __('Background', 'itsa'),
                 'type'    => 'upload',
                 'section' => 'blog_setting',
             ],
             [
                 'id'      => 'blog_header_title_bg',
-                'label'   => __( 'Header Title Background', 'bookawesome' ),
-                'type'    => 'text',
-                'section' => 'blog_setting',
-            ],
-            [
-                'id'      => 'blog_header_sub_title_bg',
-                'label'   => __( 'Sub Title Background', 'bookawesome' ),
+                'label'   => __( 'Header Title Background', 'itsa' ),
                 'type'    => 'text',
                 'section' => 'blog_setting',
             ],
@@ -85,26 +59,20 @@ class Blog extends SettingFactory
     public function SingleBlog() {
         $setting = [
             [
-                'label'       => __( 'Single Blog', 'bookawesome' ),
+                'label'       => __( 'Single Blog', 'itsa' ),
                 'id'          => 'single-blog',
                 'type'        => 'tab',
                 'section'     => 'blog_setting',
             ],
             [
                 'id'      => 'single_blog_bg',
-                'label'   => __('Background', 'bookawesome'),
+                'label'   => __('Background', 'itsa'),
                 'type'    => 'upload',
                 'section' => 'blog_setting',
             ],
             [
                 'id'      => 'single_blog_header_title_bg',
-                'label'   => __( 'Header Title Background', 'bookawesome' ),
-                'type'    => 'text',
-                'section' => 'blog_setting',
-            ],
-            [
-                'id'      => 'single_blog_header_sub_title_bg',
-                'label'   => __( 'Sub Title Background', 'bookawesome' ),
+                'label'   => __( 'Header Title Background', 'itsa' ),
                 'type'    => 'text',
                 'section' => 'blog_setting',
             ],
